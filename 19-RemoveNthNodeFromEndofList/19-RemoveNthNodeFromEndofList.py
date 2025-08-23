@@ -1,4 +1,4 @@
-# Last updated: 8/23/2025, 12:07:16 AM
+# Last updated: 8/23/2025, 12:16:57 AM
 class Solution:
     def isValid(self, s: str) -> bool:
         map = {')':'(',']':'[','}':'{'}
@@ -13,6 +13,9 @@ class Solution:
             else:
                 stack.append(c)
         return True if not stack else False
+
+                
+            
             
         
         
