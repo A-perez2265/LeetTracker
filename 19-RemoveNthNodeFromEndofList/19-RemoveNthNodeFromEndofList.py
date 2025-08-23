@@ -1,18 +1,18 @@
-# Last updated: 8/22/2025, 11:39:48 PM
+# Last updated: 8/23/2025, 12:07:16 AM
 class Solution:
     def isValid(self, s: str) -> bool:
-        hmap = {'(':')','[':']','{':'}'}
+        map = {')':'(',']':'[','}':'{'}
         stack = []
 
-        for char in s:
-            if char in hmap:
-                stack.append(char)
-            elif char in hmap.values():
-                if stack and char == hmap[stack[-1]]:
+        for c in s:
+            if c in map:
+                if stack and stack[-1] == map[c]:
                     stack.pop()
                 else:
-                    return False 
-        return not stack
-
+                    return False
+            else:
+                stack.append(c)
+        return True if not stack else False
+            
         
         
