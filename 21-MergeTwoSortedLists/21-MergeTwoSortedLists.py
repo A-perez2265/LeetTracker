@@ -1,11 +1,10 @@
-# Last updated: 8/24/2025, 1:58:03 AM
+# Last updated: 8/24/2025, 1:59:40 AM
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        newString = ""
+        news= ""
 
         for c in s:
             if c.isalnum():
-                newString += c.lower()
-        return newString == newString[::-1]
-
+                news += c.lower()
+        return news == news[::-1]
         
