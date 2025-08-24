@@ -1,12 +1,12 @@
-# Last updated: 8/20/2025, 11:27:11 PM
+# Last updated: 8/24/2025, 1:12:41 AM
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         prevMap = {}
 
-        
         for i,n in enumerate(nums):
-            diff = target - n
+            diff= target - n 
             if diff in prevMap:
-                return [prevMap[diff],i]
-            prevMap[n]=i
-        return
+                return prevMap[diff], i
+            else:
+                prevMap[n]= i
+                   
