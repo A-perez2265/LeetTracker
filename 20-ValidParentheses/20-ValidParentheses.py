@@ -1,17 +1,14 @@
-# Last updated: 8/25/2025, 10:53:33 PM
+# Last updated: 8/25/2025, 11:17:07 PM
 class Solution:
     def countBits(self, n: int) -> List[int]:
-        stack = []
+        dp = [0] * (n+1)
+        offset = 1
 
-        for k in range(n+1):
-            binary = bin(k)
-            count = 0
-            for i in binary:
-                if i == '1':
-                    count += 1
-            stack.append(count)
-        return stack
-
+        for i in range(1, n+1):
+            if offset * 2 == i:
+                offset = i
+            dp[i] = 1 + dp[i - offset]
+        return dp 
                     
 
         
