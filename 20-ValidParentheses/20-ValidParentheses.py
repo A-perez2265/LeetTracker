@@ -1,16 +1,17 @@
-# Last updated: 8/24/2025, 10:47:17 PM
+# Last updated: 8/25/2025, 10:53:33 PM
 class Solution:
-    def isValid(self, s: str) -> bool:
-        map = {')':'(',']':'[','}':'{'}
+    def countBits(self, n: int) -> List[int]:
         stack = []
 
-        for c in s:
-            if c in map:
-                if stack and stack[-1] == map[c]:
-                    stack.pop()
-                else:
-                    return False
-            else:
-                stack.append(c)
-        return True if not stack else False
+        for k in range(n+1):
+            binary = bin(k)
+            count = 0
+            for i in binary:
+                if i == '1':
+                    count += 1
+            stack.append(count)
+        return stack
+
+                    
+
         
