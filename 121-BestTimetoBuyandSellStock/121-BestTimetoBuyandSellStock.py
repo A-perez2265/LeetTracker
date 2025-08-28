@@ -1,4 +1,4 @@
-# Last updated: 8/27/2025, 10:08:52 PM
+# Last updated: 8/27/2025, 10:23:57 PM
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         lowest_price = prices[0]
