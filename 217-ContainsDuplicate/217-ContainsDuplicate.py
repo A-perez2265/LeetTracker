@@ -1,4 +1,4 @@
-# Last updated: 8/29/2025, 2:17:07 AM
+# Last updated: 9/5/2025, 2:43:09 AM
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         return not len(nums) == len(set(nums))
