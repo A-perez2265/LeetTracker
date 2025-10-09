@@ -1,13 +1,12 @@
-# Last updated: 10/9/2025, 12:11:44 AM
+# Last updated: 10/9/2025, 12:20:40 AM
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        map ={}
+        seen = set()
 
-        for i in nums:
-            if i not in map:
-                map[i]=True
-            elif i in map:
-                map[i]=False
-        for key,value in map.items():
-            if value is True:
-                return key  
+        for num in nums:
+            if num in seen:
+                seen.remove(num)
+            else:
+                seen.add(num)
+
+        return seen.pop()
