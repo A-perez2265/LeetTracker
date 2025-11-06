@@ -1,17 +1,15 @@
-# Last updated: 8/25/2025, 11:32:24 PM
+# Last updated: 11/6/2025, 3:20:11 PM
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        low = 0
-        high = len(nums) - 1
+    def isValid(self, s: str) -> bool:
+        map = {')':'(',']':'[','}':'{'}
+        stack = []
 
-        while low <= high:
-            mid = (low + high) //2
-
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] < target:
-                low = mid + 1
+        for i in s:
+            if i in map:
+                if stack and stack[-1] == map[i]:
+                    stack.pop()
+                else:
+                    return False
             else:
-                high = mid -1
-        return -1 
-        
+                stack.append(i)
+        return False if stack else True
